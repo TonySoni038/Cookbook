@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}added - Natziely's Cookbook{% endblock %}
+
+{% block content %}
+<body>
+    <div id="recipes-container">
+        <ul>
+            <li>
+                <div class="recipe">
+                    <h2>{{name}}</h2>
+                    <p class="title">Instructions</p>
+                    <p>{{instructions}}</p>
+                    <P class="title">Ingredients</P>
+                    {% for ingredient in ingredients %}
+                        <p>{{ingredient}}</p>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+{% endblock %}

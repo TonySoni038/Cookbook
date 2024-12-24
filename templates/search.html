@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}Recipes{% endblock %}
+
+{% block content %}
+<form action="/search" class="input" method="post">
+    <div class="input">
+        <input type="text" name="keyword" placeholder="Recipe" required>
+    </div>
+    <button type="submit">Search</button>
+
+</form>
+{% endblock %}

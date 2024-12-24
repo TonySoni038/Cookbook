@@ -1,0 +1,219 @@
+/* General navbar styling */
+.navbar {
+    background-color: #f8d7da; /* Light pink background */
+    padding: 10px;
+    position: relative;
+}
+
+/* Menu toggle button */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Menu styling */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Hidden by default */
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+.menu li {
+    margin: 5px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333; /* Text color */
+    font-size: 18px;
+}
+
+/* Menu displayed when expanded */
+.menu.active {
+    display: block;
+}
+/* Menu bar container */
+.menu-bar {
+    background-color: #f8d7da; /* Light pink background */
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    border-bottom: 2px solid #ffccd5; /* Add a subtle border */
+}
+
+/* Menu links list */
+.menu-links {
+    list-style: none;
+    display: flex; /* Arrange items horizontally */
+    gap: 20px; /* Add space between links */
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu link items */
+.menu-links li {
+    font-size: 16px;
+}
+
+/* Links appearance */
+.menu-links li a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #fff; /* White background for buttons */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.menu-links li a:hover {
+    background-color: #ffccd5; /* Slight pink highlight on hover */
+    color: #000; /* Change text color on hover */
+}
+
+/* Active/Selected link */
+.menu-links li a.active {
+    background-color: #ffccd5;
+    color: #000;
+    pointer-events: none; /* Disable the active link */
+}
+
+/* General body styling */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Playful font */
+    background-color: #ffe4e1; /* Light pink background */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Centered and styled title */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3em;
+    color: #ff69b4; /* Hot pink */
+    text-shadow: 2px 2px #fff; /* White shadow for glow effect */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1::before {
+    content: '';
+    background-image: url(/workspaces/176457927/final_project/hello kitty logo.png); /* Replace with the logo's path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin-right: 10px;
+}
+/* remove underlining from all links*/
+a {
+    text-decoration: none;
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logo {
+    max-width: 150px; /* Adjust the size as needed */
+    height: auto;
+}
+
+/* Recipe container styling */
+#recipes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Individual recipe card */
+.recipe {
+    background-color: #fff; /* White card */
+    border: 2px solid #ffc0cb; /* Light pink border */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+}
+
+.recipe:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.recipe h2 {
+    font-size: 1.5em;
+    color: #ff69b4; /* Hot pink */
+}
+
+.recipe p {
+    font-size: 1em;
+    color: #555; /* Neutral gray */
+    margin: 10px 0;
+}
+
+/* Style for ingredients and instructions titles */
+.title {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px; /* Slightly smaller font size */
+    font-weight: bold;
+    color: #FF69B4; /* Light pink */
+    text-align: center;
+    margin: 15px 0; /* Reduced vertical margin */
+    text-transform: uppercase; /* Makes the text uppercase */
+    border-bottom: 1px solid #FFC0CB; /* Thinner underline */
+    padding-bottom: 8px; /* Reduced padding */
+}
+
+
+.input {
+    text-align: center;
+}
+
+.input-bar {
+    width: 50%; /* Adjust width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff69b4; /* Hot pink border */
+    border-radius: 8px; /* Rounded corners */
+    outline: none;
+    text-align: center; /* Center text within the input */
+}
+
+/* Input bar focus effect */
+.input-bar:focus {
+    border-color: #ff1493; /* Darker pink on focus */
+    box-shadow: 0 0 8px #ff69b4;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffc0cb; /* Light pink footer */
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+}

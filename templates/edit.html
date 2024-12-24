@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit a Recipe{% endblock %}
+
+{% block content %}
+<script>
+    function addIngredientField() {
+        const container = document.getElementById("ingredients-container");
+        const newField = document.createElement("div");
+        newField.className = "ingredient-input";
+        newField.innerHTML = `
+            <input type="text" name="ingredients" placeholder="Ingredient" required>
+            <button type="button" onclick="removeIngredientField(this)">Remove</button>
+        `;
+        container.appendChild(newField);
+    }
+
+    function removeIngredientField(button) {
+        const field = button.parentNode;
+        field.parentNode.removeChild(field);
+    }
+</script>
+<body>
+    <div id="recipes-container">
+        <ul>
+            <li>
+                <div class="recipe">
+                    <h2>{{recipe["title"]}}</h2>
+                    <p class="title">Instructions</p>
+                    <p>{{recipe["instructions"]}}</p>
+                    <P class="title">Ingredients</P>
+                    {% for ingredient in ingredients %}
+                        <p>{{ingredient["name"]}}</p>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<form action="/edit/{{ recipe_id }}" method="post" class="input">
+    <label for="name"> New Recipe Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="instructions"> New Instructions:</label>
+        <textarea id="instructions" name="instructions" required></textarea><br>
+
+        <label>New Ingredients:</label>
+        <div id="ingredients-container">
+            <div class="input">
+                <input type="text" name="ingredients" placeholder="Ingredient" required>
+            </div>
+        </div>
+        <button type="button" onclick="addIngredientField()">Add Ingredient</button><br>
+        <p> </p>
+        <div>
+        <button type="submit">Update Recipe</button>
+        </div>
+</form>
+<div class="input">
+    <a href="{{ url_for('search', recipe_id=recipe['id']) }}">Back to search results</a>
+</div>
+{% endblock %}

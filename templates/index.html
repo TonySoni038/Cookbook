@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home - Natziely's Cookbook{% endblock %}
+
+{% block content %}
+<body>
+    <div id="recipes-container">
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <a href="{{ url_for('recipe', recipe_id=recipe['id']) }}" >
+                    <div class="recipe">
+                        <h2>{{ recipe["title"] }}</h2>
+                        <p>{{ recipe["instructions"] }}</p>
+                    </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+{% endblock %}
